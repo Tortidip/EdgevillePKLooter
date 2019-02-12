@@ -1,20 +1,23 @@
 package EdgevillePKLooter.tasks;
 
+import EdgevillePKLooter.Task;
+
 import org.powerbot.script.Condition;
+import org.powerbot.script.Tile;
 import org.powerbot.script.rt4.ClientContext;
-import scripts.Task;
+
 
 import java.util.concurrent.Callable;
 
 public class Bank extends Task {
-
+    public Tile bankTile = new Tile(3094,3491,0);
     public Bank(ClientContext ctx) {
         super(ctx);
     }
 
     @Override
     public boolean activate() {
-        return ctx.inventory.select().count()>27 ;
+        return ctx.inventory.select().count()>27 && ctx.players.local().tile().distanceTo(bankTile)< 6;
     }
 
     @Override
