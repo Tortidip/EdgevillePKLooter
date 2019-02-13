@@ -9,6 +9,7 @@ import org.powerbot.script.rt4.ClientContext;
 
 import java.util.concurrent.Callable;
 
+
 public class Bank extends Task {
     public Tile bankTile = new Tile(3094,3491,0);
     public Bank(ClientContext ctx) {
@@ -50,4 +51,3 @@ public class Bank extends Task {
 
     }
 }
-
